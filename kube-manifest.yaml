@@ -1,0 +1,11 @@
+apiVersion: manifest.k8s.io/v1alpha1
+kind: Manifest
+metadata:
+  name: spark-operator
+description: Run Spark on Kubernetes with Spark Operator.
+resources:
+  - crds/sparkoperator.k8s.io_scheduledsparkapplications.yaml
+  - crds/sparkoperator.k8s.io_sparkapplications.yaml
+  - spark-operator.yaml
+  - spark-operator-rbac.yaml
+  - spark-rbac.yaml
