@@ -1,6 +1,10 @@
 # kustomize-spark-operator
 
-A Kustomize module for the Spark Operator
+A Kustomize module for the Spark Operator.
+
+This repo is a bespoke configuration of the [Spark Operator](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator) targets configured for high availability and scalability for GKE.
+
+It is meant to be used as a module in your [Kustomize](https://github.com/kubernetes-sigs/kustomize) configuration.
 
 ## Project Status
 
