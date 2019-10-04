@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - sparkoperator.k8s.io_scheduledsparkapplications.yaml
+  - sparkoperator.k8s.io_sparkapplications.yaml

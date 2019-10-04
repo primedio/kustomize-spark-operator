@@ -7,12 +7,9 @@ commonLabels:
   app.kubernetes.io/part-of: spark-operator
 
 bases:
-  - spark
-  - spark-operator
-
-resources:
-  - crds/sparkoperator.k8s.io_scheduledsparkapplications.yaml
-  - crds/sparkoperator.k8s.io_sparkapplications.yaml
+  - base/crds
+  - base/spark
+  - base/spark-operator
 
 images:
   - name: sparkoperator
