@@ -1903,7 +1903,8 @@ spec:
                           type: string
                         port:
                           format: int32
-                          minimum: 49151
+                          minimum: 1024
+                          maximum: 49151
                           type: integer
                       required:
                       - jmxExporterJar
@@ -2536,29 +2537,6 @@ spec:
           required:
           - schedule
           - template
-          type: object
-        status:
-          properties:
-            lastRun:
-              format: date-time
-              type: string
-            lastRunName:
-              type: string
-            nextRun:
-              format: date-time
-              type: string
-            pastFailedRunNames:
-              items:
-                type: string
-              type: array
-            pastSuccessfulRunNames:
-              items:
-                type: string
-              type: array
-            reason:
-              type: string
-            scheduleState:
-              type: string
           type: object
       required:
       - metadata
