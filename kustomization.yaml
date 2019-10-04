@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 commonLabels:
-  app.kubernetes.io/version: v2.4.4-v1beta2
+  app.kubernetes.io/version: v1beta2-1.0.1-2.4.4
   app.kubernetes.io/managed-by: kustomize
   app.kubernetes.io/part-of: spark-operator
 
@@ -16,7 +16,7 @@ resources:
 
 images:
   - name: sparkoperator
-    newTag: v1beta2-1.0.0-2.4.4
+    newTag: v1beta2-1.0.1-2.4.4
     digest: sha256:52b257911a5c47c480aae25f83c80151a2ed8c99e8b50317d451c157c80666fd
 
 replicas:
@@ -32,7 +32,7 @@ patches:
   - path: patches/patch_add_monitoring.yaml
     target:
       kind: Deployment
-  # use HA leader election
-  - path: patches/patch_use_leader_election.yaml
+  # configure commandline for HA leader-election, metrics and more
+  - path: patches/patch_commandline.yaml
     target:
       kind: Deployment
