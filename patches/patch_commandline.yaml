@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sparkoperator
+spec:
+  template:
+    metadata:
+      name: sparkoperator
+      namespace: sparkoperator
+    spec:
+      containers:
+        - name: sparkoperator
+          args: 
+            - -v=2
+            - -namespace=$(operator-namespace)
+            - -ingress-url-format=$(ingress-url)
+            - -controller-threads=$(controller-threads)
+            - -resync-interval=$(resync-interval)
+            - -logtostderr
+            - -enable-batch-scheduler=$(enable-batch-scheduler)
+            - -enable-metrics=$(enable-metrics)
+            - -metrics-labels=$(metrics-labels)
+            - -metrics-port=$(metrics-port)
+            - -metrics-endpoint=$(metrics-endpoint)
+            - -metrics-prefix=$(metrics-prefix)
+            - -enable-webhook=$(enable-webhook)
+            - -webhook-svc-namespace=$(webhook-svc-namespace)
+            - -webhook-port=$(webhook-port)
+            - -webhook-svc-name=$(webhook-svc-name)
+            - -webhook-config-name=$(webhook-config-name)
+            - -leader-election=$(leader-election)
+          
